@@ -88,3 +88,31 @@ To run the application locally, make sure you have Python installed. Then follow
 
 ## License
 This project is licensed under the MIT License. See the License file for details.
+
+
+
+# Craft a Prompt for Copilot:
+Use the following prompt to get suggestions for refactoring the code:
+prompt
+
+How can I refactor the CRUD operations in crud.py to improve maintainability?
+
+
+Use the following prompt to guide Copilot in suggesting modular improvements:
+prompt
+
+How can I improve the modularity of the CRUD operations and models in this project?
+
+
+<!-- OLD DOCKERFILE -->
+FROM python:3.11.10
+
+WORKDIR /code
+
+COPY requirements.txt /code/
+
+RUN pip install -r requirements.txt
+
+COPY . /code/
+
+CMD [ "fastapi", "run", "app/main.py" ]
