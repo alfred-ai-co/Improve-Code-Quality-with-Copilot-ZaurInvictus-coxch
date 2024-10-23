@@ -38,6 +38,9 @@ class Ticket(Base):
 
 
 class KanbanBoard(Base):
+    """
+    Represents a Kanban board which contains multiple projects and statuses.
+    """
     __tablename__ = "kanban_boards"
     
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -49,7 +52,11 @@ class KanbanBoard(Base):
     projects = relationship('Project', back_populates='kanban_board')
     statuses = relationship('KanbanStatus', back_populates='kanban_board')
 
+
 class KanbanStatus(Base):
+    """
+    Represents a status within a Kanban board, such as 'To Do', 'In Progress', or 'Done'.
+    """
     __tablename__ = "kanban_statuses"
     
     id = Column(Integer, primary_key=True, autoincrement=True)
